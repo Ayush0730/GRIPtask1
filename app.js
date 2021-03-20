@@ -6,6 +6,7 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
+require("dotenv").config();
 
 app.use(session({ 
     secret:'geeksforgeeks', 
@@ -18,15 +19,6 @@ app.use(function(req, res, next){
 	res.locals.success = req.flash("success");
 	next();
 });
-  
-// app.get('/', (req, res) => { 
-//   req.flash('message', 'Success!!'); 
-//   res.redirect('/gfg'); 
-// }); 
-  
-// app.get('/gfg', (req, res) => { 
-//     res.render('home.ejs', {success : req.flash('message')}); 
-// }); 
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended : true}));
@@ -35,7 +27,9 @@ app.use(cookieParser());
 
 const User = require('./models/user');
 const Transaction = require('./models/txnHistory');
-mongoose.connect('mongodb://localhost:27017/TSF', {useNewUrlParser : true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
+
+const uri = process.env.MONGODB_URI;
+mongoose.connect(uri, {useNewUrlParser : true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 app.locals.moment = require("moment");
 
 app.get('/', function(req, res){
