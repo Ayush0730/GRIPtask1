@@ -1,0 +1,38 @@
+<%- include('./partials/header') %>
+<style>
+    body{
+        background: url('https://image.freepik.com/free-vector/banking-background-design_1223-54.jpg');
+    }
+</style>
+<h1 class="display-1 d-flex justify-content-center mb-5 pb-5">Welcome To TSF Bank</h1>
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://previews.123rf.com/images/putracetol/putracetol1808/putracetol180801762/106805979-transfer-money-logo-icon-design.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="/customers" class="btn btn-success">Transfer Money</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.pngitem.com/pimgs/m/80-800194_transparent-users-icon-png-flat-user-icon-png.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="/new" class="btn btn-primary">Create New User</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://thumbs.dreamstime.com/b/transaction-history-rgb-color-icon-e-wallet-application-mobile-banking-app-using-payment-bill-checking-payments-report-isolated-194875666.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="/history" class="btn btn-danger">Transaction History</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

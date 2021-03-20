@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<h1 class="d-flex justify-content-center">ALL CUSTOMERS</h1>
+    <table class="table table-bordered table-info table-striped">
+        <thead>
+
+        </thead>
+        <tbody>
+            <% customers.forEach(function(customer){ %>
+                <tr>
+                    <td><h4><%= customer.name %></h4></td>
+                    <td><h4><%= customer.email %></h4></td>
+                    <td><h4><%= customer.balance %></h4></td>
+                    <td><a class="btn btn-success" href="/customers/<%= customer.name %>">Transfer</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+<%- include('./partials/footer') %>
